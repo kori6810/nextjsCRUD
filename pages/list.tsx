@@ -1,11 +1,15 @@
 import {
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
   Button,
   ButtonGroup,
+  Heading,
+  Stack,
+  StackDivider,
+  Box,
+  Text,
 } from "@chakra-ui/react";
 import { FaPlus } from "react-icons/fa";
 
@@ -14,12 +18,37 @@ import styles from "../styles/Home.module.css";
 export default function BoardContentList() {
   return (
     <>
-      <UnorderedList className={styles.list} spacing="30px">
-        <ListItem>Lorem ipsum dolor sit amet</ListItem>
-        <ListItem>Consectetur adipiscing elit</ListItem>
-        <ListItem>Integer molestie lorem at massa</ListItem>
-        <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-      </UnorderedList>
+      <h1 className={styles.header}>Board List</h1>
+      <Card size="lg">
+        <CardBody>
+          <Stack divider={<StackDivider />} spacing="4">
+            <Box>
+              <Heading size="xs" textTransform="uppercase">
+                Summary
+              </Heading>
+              <Text pt="2" fontSize="sm">
+                View a summary of all your clients over the last month.
+              </Text>
+            </Box>
+            <Box>
+              <Heading size="xs" textTransform="uppercase">
+                Overview
+              </Heading>
+              <Text pt="2" fontSize="sm">
+                Check out the overview of your clients.
+              </Text>
+            </Box>
+            <Box>
+              <Heading size="xs" textTransform="uppercase">
+                Analysis
+              </Heading>
+              <Text pt="2" fontSize="sm">
+                See a detailed analysis of all your business clients.
+              </Text>
+            </Box>
+          </Stack>
+        </CardBody>
+      </Card>
       <Button
         leftIcon={<FaPlus />}
         size="md"
