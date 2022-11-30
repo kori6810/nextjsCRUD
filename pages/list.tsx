@@ -12,40 +12,31 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FaPlus } from "react-icons/fa";
-
 import styles from "../styles/Home.module.css";
+import { dataType } from "./index";
 
-export default function BoardContentList() {
+type itemProps = {
+  allData: dataType[];
+};
+
+export default function BoardContentList({ allData }: itemProps) {
+  console.log(allData);
   return (
     <>
       <h1 className={styles.header}>Board List</h1>
-      <Card size="lg">
+      <Card size="lg" style={{ width: "600px" }}>
         <CardBody>
           <Stack divider={<StackDivider />} spacing="4">
-            <Box>
-              <Heading size="xs" textTransform="uppercase">
-                Summary
-              </Heading>
-              <Text pt="2" fontSize="sm">
-                View a summary of all your clients over the last month.
-              </Text>
-            </Box>
-            <Box>
-              <Heading size="xs" textTransform="uppercase">
-                Overview
-              </Heading>
-              <Text pt="2" fontSize="sm">
-                Check out the overview of your clients.
-              </Text>
-            </Box>
-            <Box>
-              <Heading size="xs" textTransform="uppercase">
-                Analysis
-              </Heading>
-              <Text pt="2" fontSize="sm">
-                See a detailed analysis of all your business clients.
-              </Text>
-            </Box>
+            {allData.map((item) => (
+              <Box key={''}>
+                <Heading size="xs" textTransform="uppercase">
+                  Summary
+                </Heading>
+                <Text pt="2" fontSize="sm">
+                  View a summary of all your clients over the last month.
+                </Text>
+              </Box>
+            ))}
           </Stack>
         </CardBody>
       </Card>
@@ -54,6 +45,7 @@ export default function BoardContentList() {
         size="md"
         colorScheme="blue"
         variant="solid"
+        style={{ margin: "25px 0px" }}
       >
         add content
       </Button>
