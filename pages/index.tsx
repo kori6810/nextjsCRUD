@@ -19,7 +19,8 @@ export type dataType = {
 export default function Home() {
   const [posts, setPost] = useState<dataType[]>([] as dataType[]);
 
-  const apiEndPoint = "https://jsonplaceholder.typicode.com/posts";
+  const apiEndPoint =
+    "https://my-json-server.typicode.com/typicode/demo/kori6810/nextjsCRUD";
   // const apiEndPoint = [
   //   {
   //     userId:1,
