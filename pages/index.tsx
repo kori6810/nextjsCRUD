@@ -17,25 +17,21 @@ export type dataType = {
 };
 
 export default function Home() {
-  const [posts, setPost] = useState<dataType[]>([] as dataType[]);
+  const [posts, setPosts] = useState<dataType[]>([] as dataType[]);
+  const [addPost, setAddPost] = useState(false);
 
-  const apiEndPoint =
-    "https://my-json-server.typicode.com/typicode/demo/kori6810/nextjsCRUD";
-  // const apiEndPoint = [
-  //   {
-  //     userId:1,
-  //     id:1,
-  //     title:'heey'
-  //     body:'body'
-  //   }
-  // ];
-  console.log(apiEndPoint);
+  const apiEndPoint = "http://localhost:8000/posts";
+
+  // console.log(apiEndPoint);
   useEffect(() => {
     const getPosts = async () => {
       const { data: res } = await axios.get(apiEndPoint);
+      setPosts(res);
     };
     getPosts();
   }, []);
+  //////////api papka ochamz unga axios commandalar yozamz, data olamz kere joyda chaqirib ishaltamz. state keremasga oxshavoti
+
   return (
     <div className={styles.container}>
       <BoardContentList allData={posts} />

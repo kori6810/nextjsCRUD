@@ -10,14 +10,21 @@ import {
   StackDivider,
   Box,
   Text,
+  Flex,
+  defineStyle,
 } from "@chakra-ui/react";
 import { FaPlus } from "react-icons/fa";
+import Link from "next/link";
+
 import styles from "../styles/Home.module.css";
 import { dataType } from "./index";
 
-type itemProps = {
+export type itemProps = {
   allData: dataType[];
 };
+const underline = defineStyle({
+  margin: "5",
+});
 
 export default function BoardContentList({ allData }: itemProps) {
   console.log(allData);
@@ -27,28 +34,32 @@ export default function BoardContentList({ allData }: itemProps) {
       <Card size="lg" style={{ width: "600px" }}>
         <CardBody>
           <Stack divider={<StackDivider />} spacing="4">
-            {allData.map((item) => (
-              <Box key={''}>
-                <Heading size="xs" textTransform="uppercase">
-                  Summary
+            {allData.map(({ id, title, body }) => (
+              <Box key={id} style={{ display: "flex", alignItems: "center" }}>
+                <Heading
+                  size="xs"
+                  textTransform="uppercase"
+                  style={{ marginRight: "5px" }}
+                >
+                  {id}
                 </Heading>
-                <Text pt="2" fontSize="sm">
-                  View a summary of all your clients over the last month.
-                </Text>
+                <Text fontSize="sm">{title}</Text>
               </Box>
             ))}
           </Stack>
         </CardBody>
       </Card>
-      <Button
-        leftIcon={<FaPlus />}
-        size="md"
-        colorScheme="blue"
-        variant="solid"
-        style={{ margin: "25px 0px" }}
-      >
-        add content
-      </Button>
+      <Link href="/addContent">
+        <Button
+          leftIcon={<FaPlus />}
+          size="md"
+          colorScheme="blue"
+          variant="solid"
+          style={{ margin: "25px 0px" }}
+        >
+          add content
+        </Button>
+      </Link>
     </>
   );
 }
