@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { FaPlus } from "react-icons/fa";
 import Link from "next/link";
-import { atom, useRecoilState } from "recoil";
+import { atom, useRecoilState, selector } from "recoil";
 import { useRouter } from "next/router";
 
 // {
@@ -22,19 +22,11 @@ import { useRouter } from "next/router";
 //   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
 //   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 // },
-const postAtom = atom({
+export const postAtom = atom({
   key: "post atom",
   default: [],
 });
 
-// const Post = () => {
-//   const router = useRouter()
-//   const { pid } = router.query
-
-//   return <p>Post: {pid}</p>
-// }
-
-// export default Post
 export type dataType = {
   id: number;
   title: string;

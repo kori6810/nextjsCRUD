@@ -21,34 +21,14 @@
       "body": "hello this first time using json-server"
     },
     {
-      "id": "23",
+      "id": "123",
       "title": "New Content",
-      "body": "hello world heyyyyyyy"
+      "body": "bla bla bla bnalksd sdlskndklsnndnsk kldklsdsm"
     },
     {
-      "id": "0112",
-      "title": "dfsdfdf",
-      "body": "dfdfdfdfdf"
-    },
-    {
-      "id": "0112222",
-      "title": "dfsdfdf",
-      "body": "dfdfdfdfdf"
-    },
-    {
-      "id": "121212",
-      "title": "232fdfd",
-      "body": "sdfsfsdfs"
-    },
-    {
-      "id": "0232434234",
-      "title": "sfd",
-      "body": "sdfsdfsfsfsfsfsd"
-    },
-    {
-      "id": "88v1s2X",
-      "title": "",
-      "body": ""
+      "id": "23232",
+      "title": "sdsdsd",
+      "body": "asdasdasdasd"
     }
   ]
 }

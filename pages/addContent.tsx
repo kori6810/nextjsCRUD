@@ -18,7 +18,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-interface Values {
+export interface Values {
   id: number;
   title: string;
   body: string;
