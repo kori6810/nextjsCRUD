@@ -16,12 +16,7 @@ import Link from "next/link";
 import { atom, useRecoilState, selector } from "recoil";
 import { useRouter } from "next/router";
 
-// {
-//   "userId": 1,
-//   "id": 1,
-//   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-//   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-// },
+
 export const postAtom = atom({
   key: "post atom",
   default: [],
@@ -34,7 +29,7 @@ export type dataType = {
 };
 
 export default function Home() {
-  // const [posts, setPosts] = useState<dataType[]>([] as dataType[]);
+
   const route = useRouter();
   const [post, setPost] = useRecoilState(postAtom);
 
@@ -47,7 +42,7 @@ export default function Home() {
     };
     getPosts();
   }, []);
-  //////////api papka ochamz unga axios commandalar yozamz, data olamz kere joyda chaqirib ishaltamz. state keremasga oxshavoti
+
   const moveFor = (id: dataType) => {
     route.push(`/content/${id}`);
   };

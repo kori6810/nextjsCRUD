@@ -3,14 +3,9 @@ import {
   Card,
   CardBody,
   Button,
-  Textarea,
   Input,
   Heading,
-  Icon,
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
+ 
 } from "@chakra-ui/react";
 
 import axios from "axios";
@@ -28,7 +23,14 @@ const Content = () => {
   } = router;
   const [post, setPost] = useRecoilState(postAtom);
   const [selectedContent, setSelectedContent] = useState<any>();
-
+  const contentDel = () => {
+    const res = axios.delete(`http://localhost:8000/posts/${contentid}`);
+    res.then((res) => {
+      if (res.status === 200) {
+        router.back();
+      } else alert("Error");
+    });
+  };
   const formik = useFormik({
     initialValues: {
       id: selectedContent?.id,
@@ -38,13 +40,13 @@ const Content = () => {
     enableReinitialize: true,
     onSubmit: () => {
       if (formik.values.id > 0) {
-        const response = axios.post(
-          "http://localhost:8000/posts",
+        const response = axios.put(
+          `http://localhost:8000/posts/${selectedContent.id}`,
           formik.values
         );
         response.then((res) => {
           if (res.status === 201 || 200) {
-            router.push("/");
+            router.back();
           } else {
           }
         });
@@ -117,6 +119,7 @@ const Content = () => {
               colorScheme="red"
               variant="solid"
               style={{ margin: "25px 25px" }}
+              onClick={contentDel}
               // type="submit"
             >
               Delete

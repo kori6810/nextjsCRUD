@@ -35,7 +35,7 @@ const AddContent = () => {
         <CardBody>
           <Formik
             initialValues={{
-              id: 0,
+              id: Number(0),
               title: "",
               body: "",
             }}
@@ -70,6 +70,7 @@ const AddContent = () => {
                 id="id"
                 name="id"
                 placeholder="John"
+                type="number"
                 as={Input}
               />
 
@@ -94,18 +95,6 @@ const AddContent = () => {
                 placeholder="enter your text"
                 as={Textarea}
               />
-
-              {/* <Button
-                leftIcon={<FaPlus />}
-                size="md"
-                colorScheme="blue"
-                variant="solid"
-                type="submit"
-                className={styles.button}
-              >
-                add content
-              </Button> */}
-
               <Button
                 leftIcon={<FaPlus />}
                 size="md"

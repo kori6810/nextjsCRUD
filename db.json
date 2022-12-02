@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "body": "hello this first time using json-server"
-    },
-    {
       "id": 2,
       "title": "json-server 2",
       "body": "hello this first time using json-server"
@@ -16,19 +11,14 @@
       "body": "hello this first time using json-server"
     },
     {
-      "id": 4,
-      "title": "json-server 4",
-      "body": "hello this first time using json-server"
+      "id": 122,
+      "title": "sdsds",
+      "body": "sdsds"
     },
     {
-      "id": "123",
-      "title": "New Content",
-      "body": "bla bla bla bnalksd sdlskndklsnndnsk kldklsdsm"
-    },
-    {
-      "id": "23232",
-      "title": "sdsdsd",
-      "body": "asdasdasdasd"
+      "id": 23243,
+      "title": "fsfdfd",
+      "body": "dfsdfsdf"
     }
   ]
 }
